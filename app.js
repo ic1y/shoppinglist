@@ -1,4 +1,7 @@
 "use strict";
+const itemInput = document.getElementById("itemInput");
+autosize(itemInput);
+
 // https://stackoverflow.com/a/4793630
 function insertAfter(referenceNode, newNode) {
 	referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
@@ -15,11 +18,12 @@ function addItem(item, checked) {
 	if (checked === true) checkbox.checked = true;
 	checkbox.addEventListener("change", osmanthusWine);
 
-	const input = document.createElement("input");
-	input.type = "text";
+	const input = document.createElement("textarea");
 	input.classList.add("itemText");
+	input.rows = "1";
 	input.value = item;
 	input.addEventListener("input", osmanthusWine);
+	autosize(input);
 
 	const button = document.createElement("button");
 	button.type = "button";
@@ -34,7 +38,7 @@ function addItem(item, checked) {
 	div.appendChild(checkbox);
 	div.appendChild(input);
 	div.appendChild(button);
-	insertAfter(document.getElementById("itemInput"), div);
+	insertAfter(itemInput, div);
 	if (typeof checked === "undefined") osmanthusWine();
 }
 
@@ -56,7 +60,7 @@ if (localStorage.getItem("data") !== null) {
 	}
 }
 
-document.getElementById("itemInput").addEventListener("keypress", (e) => {
+itemInput.addEventListener("keypress", (e) => {
 	if (e.key === "Enter") {
 		addItem(e.target.value.trim());
 		e.target.value = "";
