@@ -1,6 +1,5 @@
 "use strict";
 const itemInput = document.getElementById("itemInput");
-autosize(itemInput);
 
 // https://stackoverflow.com/a/4793630
 function insertAfter(referenceNode, newNode) {
