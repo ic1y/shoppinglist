@@ -19,7 +19,7 @@ body {
 	flex-direction: column;
 }
 #itemInput {
-	width: 20rem;
+	width: 40rem;
 	max-width: calc(100vw - 4rem);
 }
 h1 {
@@ -28,7 +28,7 @@ h1 {
 }
 .item {
 	margin-top: 1rem;
-	width: 20rem;
+	width: 40rem;
 	max-width: calc(100vw - 4rem);
 	display: flex;
 	justify-content: start;	
@@ -36,7 +36,7 @@ h1 {
 }
 .item > textarea {
 	margin: 0 0.5rem;
-	width: 15rem;
+	width: 35rem;
 	max-width: calc(100vw - 9rem);
 	min-height: 2rem;
 	line-height: 1.5;
@@ -51,6 +51,12 @@ h1 {
 	justify-content: center;
 	align-items: center;
 }
-body > svg {
-	display: none;
+.item > button > svg {
+	height: 1.5rem;
+	width: 1.5rem;
+}
+@media screen and (prefers-color-scheme: dark) {
+	html {
+		color-scheme: dark;
+	}
 }
