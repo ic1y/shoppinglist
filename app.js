@@ -21,6 +21,9 @@ function addItem(item, checked) {
 	input.classList.add("itemText");
 	input.rows = "1";
 	input.value = item;
+	input.addEventListener("focus", () => {
+		autosize.update(input);
+	})
 	input.addEventListener("input", osmanthusWine);
 	autosize(input);
 
