@@ -31,12 +31,5 @@
 			"source": "/(.*)",
 			"destination": "/index.html"
 		}
-	],
-	"redirects": [
-		{
-			"source": "/dnt-survey",
-			"destination": "https://docs.google.com/forms/d/e/1FAIpQLScCoVMm9Vs_gxK0vcWJlcuHnJ2GqVyW8-LxI2E3zJlLIDlf8Q/viewform",
-			"permanent": true
-		}
 	]
 }
