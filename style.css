@@ -36,6 +36,9 @@ h1 {
 	justify-content: start;	
 	flex-direction: row;
 }
+[class~='item']:last-of-type  {
+	margin-bottom: 1rem;
+}
 .item > textarea {
 	margin: 0 0.5rem;
 	width: 35rem;
@@ -54,7 +57,6 @@ h1 {
 	align-items: center;
 	height: 2rem;
 	width: 2rem;
-	appearance: none;
 }
 #itemForm {
 	display: flex;
