@@ -49,11 +49,12 @@ h1 {
 	width: 2rem;
 }
 .item > button, #itemSubmit {
-	/* display: flex;
+	display: flex;
 	justify-content: center;
-	align-items: center; */
+	align-items: center;
 	height: 2rem;
 	width: 2rem;
+	appearance: none;
 }
 #itemForm {
 	display: flex;
