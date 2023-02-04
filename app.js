@@ -8,6 +8,7 @@ function insertAfter(referenceNode, newNode) {
 }
 
 function addItem(item, checked) {
+	itemInput.value = "";
 	item = item.trim();
 	if (item.length === 0) return;
 	const div = document.createElement("div");
@@ -53,11 +54,11 @@ function osmanthusWine() {
 	for (let i = 0; i < checkboxInputs.length; i++) {
 		data.push((checkboxInputs[i].checked ? "1" : "0") + itemTexts[i].value);
 	}
-	localStorage.setItem("data", JSON.stringify(data));
+	localStorage.setItem("data", data.join(","));
 }
 
 if (localStorage.getItem("data") !== null) {
-	let data = Array.from(JSON.parse(localStorage.getItem("data"))).reverse();
+	let data = Array.from(localStorage.getItem("data").split(",")).reverse();
 	for (let i = 0; i < data.length; i++) {
 		addItem(data[i].slice(1), Boolean(Number(data[i].slice(0, 1))));
 		console.log((data[i].slice(0, 1)));
@@ -67,7 +68,6 @@ if (localStorage.getItem("data") !== null) {
 itemInput.addEventListener("keypress", (e) => {
 	if (e.key === "Enter") {
 		addItem(e.target.value);
-		e.target.value = "";
 	}
 });
 
